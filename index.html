@@ -124,35 +124,34 @@
       9 Areas </p> 
     <br>
     <div class="tf_div">
-      <a data-name="याकाक्षे टोल">याकाक्षे टोल</a>
-      <a data-name="नाष्टोल">नाष्टोल</a>
-      <a data-name="वसाटोल">वसाटोल</a>
-      <a data-name="लासाकोटोल">लासाकोटोल</a>
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-        
-      <a data-name="भुखाटोल">भुखाटोल</a>
-              <a data-name="Manandhar toll">Manandhar toll</a>
-
-      <a data-name="वहाटोल">वहाटोल</a>
-      <a data-name="Old darbur">Old darbur</a>
-      <a data-name="Dwakcha pull / Naya bazar">Dwakcha pull / Naya bazar</a>
+   
   </div>
   
-   
+   <script>
+    // आपका डेटा
+const tagsData = [
+    "याकाक्षे टोल",
+    "नाष्टोल",
+    "वसाटोल",
+    "लासाकोटोल",
+    "भुखाटोल",
+    "Manandhar toll",
+    "वहाटोल",
+    "Old darbur",
+    "Dwakcha pull / Naya bazar"
+];
+
+// tf_div तत्व प्राप्त करें
+const tfDiv = document.querySelector('.tf_div');
+
+// प्रत्येक डेटा आइटम के लिए एक <a> टैग बनाएं और उसे tf_div में जोड़ें
+tagsData.forEach(tagName => {
+    const aTag = document.createElement('a');
+    aTag.textContent = tagName;
+    aTag.setAttribute('data-name', tagName);
+    tfDiv.appendChild(aTag);
+});
+   </script>
     
    
     </div>
