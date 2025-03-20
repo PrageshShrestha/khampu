@@ -1,0 +1,574 @@
+
+<!DOCTYPE html>
+<html>
+<head>
+    <title>OpenStreetMap with Layers</title>
+
+    <!-- Include Leaflet CSS -->
+    <link rel="icon" type="image/png" href="icon.PNG">
+
+    <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;700&family=Open+Sans:wght@300;600&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://unpkg.com/leaflet@1.9.4/dist/leaflet.css" />
+    <link rel="stylesheet" href="style.css">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.2/gsap.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.2/ScrollTrigger.min.js"></script>
+    <link rel="stylesheet" href="https://unpkg.com/leaflet/dist/leaflet.css" />
+    <script src="https://unpkg.com/leaflet/dist/leaflet.js"></script>
+    <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Dancing+Script&display=swap" rel="stylesheet">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="https://unpkg.com/leaflet@1.7.1/dist/leaflet.css" />
+    <script src="https://unpkg.com/leaflet@1.7.1/dist/leaflet.js"></script>
+    <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+
+</head>
+
+
+<div class="textContainer" id="animatedText">Shreekhandapur</div>
+<div style="overflow-x:hidden;">
+<div class="page_front" style="position:sticky;top:0;">
+<!---  <iframe src="some.svg"></iframe>-->
+
+<div class="text_front">
+  <div class="wrapper">
+    <svg>
+      <text x="50%" y="50%" dy=".35em" text-anchor="middle">
+        KHAMPU
+      </text>
+    </svg>
+  </div>
+  
+<p class="tracking-in-expand b">
+  Khadpu </p> 
+<br>
+<p class="p_tag">
+  A town of the past , the present and the future. <br>
+  Since Lichhivi period , reorganized in 1153 BS <br>(1097 AD).
+
+
+</p>
+
+<br>
+<button class="btn-17">
+  <span class="text-container">
+    <a href="https://jojolopakhampu.com/" class="text">See more</a>
+  </span>
+</button>
+</div>
+
+<div class="image_front fade-in">
+<div class="if a">
+  <img src="img1.jpg" alt = "" class="img_if a">
+  <img src="img4.jpg" alt = "" class="img_if b">
+  <img src="img3.jpg" alt = "" class="img_if c">
+
+
+</div>
+<div class="if b">
+  <img src="img2.jpg" alt = "" class="img_if d">
+  <img src="img5.jpg" alt = "" class="img_if e">
+  <img src="img6.jpg" alt = "" class = "img_if f">
+
+
+</div>
+<div class="if a">
+  <img src="img7.jpg" alt = "" class="img_if g">
+  <img src="img8.jpg" alt = "" class="img_if h">
+  <img src="img9.jpg" alt = "" class="img_if i">
+
+</div>
+</div>
+
+
+
+</div>
+
+<div class="second_front slide-in">
+
+<div class="tracking-in-expand b"> 
+  द्यो छें <br> Temple 
+</div>
+<div style="margin-top:8vh;z-index:2;">
+  The home residing Gods themselves, designed in Pagoda style with ancient carvings, a true symbol of Khampu and a well-managed form of religious unity.
+</div>
+
+<div class="ife">
+  <img src="img1.jpg" alt = "" class="img_ife a">
+  <img src="narayanthan.jpg" alt = "" class="img_ife b">
+  <img src="stupa1.jpg" alt = "" class="img_ife c">
+  <img src="ganeshthan.jpg" alt = "" class="img_ife d">
+  <img src="stupa2.jpg" alt = "" class="img_ife e">
+  <img src="" alt = "" class="img_ife f">
+  <img src="pokhari.jpg" alt = "" class="img_ife g">
+
+</div>
+<button class="btn-17" style="margin-top:4vh">
+  <span class="text-container">
+    <a href="https://earth.google.com/web/@27.61558313,85.53383114,1462.14676281a,1025.90516681d,35y,0.00000001h,3.66679884t,360r/data=CgRCAggBOgMKATBCAggASg0I____________ARAA" class="text">Visit us</a>
+  </span>
+</button>
+
+</div>
+<div class="third_front ">
+
+
+  <div class="text_front zoom-in">
+  <p class="tracking-in-expand b">
+    One Town </p> 
+    <p class="tracking-in-expand" style="margin-top:5vh;font-size:5rem;">
+      9 Areas </p> 
+    <br>
+    <div class="tf_div">
+      <a data-name="याकाक्षे टोल">याकाक्षे टोल</a>
+      <a data-name="नाष्टोल">नाष्टोल</a>
+      <a data-name="वसाटोल">वसाटोल</a>
+      <a data-name="लासाकोटोल">लासाकोटोल</a>
+      <a data-name="भुखाटोल">भुखाटोल</a>
+      <a data-name="वहाटोल">वहाटोल</a>
+      <a data-name="Old darbur">Old darbur</a>
+      <a data-name="Dwakcha pull / Naya bazar">Dwakcha pull / Naya bazar</a>
+      <a data-name="Manandhar toll">Manandhar toll</a>
+  </div>
+  
+   
+    
+   
+    </div>
+
+   
+        <!-- Map container -->
+
+        <div class="map_container">
+          <a class="mp a" href="https://banepamun.gov.np/">Banepa / भोटे  ↑N</a>
+          <a class="mp b" href="https://earth.google.com/web/@27.61771943,85.52283434,1498.59686632a,1630.9930187d,35y,0.00000001h,3.66714672t,0r/data=CgRCAggBOgMKATBCAggASg0I____________ARAA">Dhaneshwor / धनेश्वर</a>
+          <a class="mp c" href="https://dhulikhelmun.gov.np/en">Dhulikhel / धौखेल / Chaukot</a>
+          <a class="mp d" href="https://panautimun.gov.np/">Panauti / पलाटी </a>
+        <div id="map"></div>
+        
+    </div>
+  
+    <script>
+      $(document).ready(function() {
+          // Map Initialization
+          const map = L.map('map').setView([27.61528, 85.53389], 17);
+
+          // OpenStreetMap Layer
+          L.tileLayer('https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png', {
+              attribution: 'KHAMPU',
+              maxZoom: 19
+          }).addTo(map);
+
+          // Color Palette
+          const colors = [
+              "#FF0000", "#00FF00", "#0000FF", "#FFFF00", "#FF00FF",
+              "#00FFFF", "#FF9900", "#9900FF", "#00FF99"
+          ];
+
+          // Area Data
+          const areas = [
+              { name: "याकाक्षे टोल", color: colors[0], coords: [[27.615900, 85.534503], [27.616316, 85.534734], [27.615836, 85.535841], [27.615489, 85.535104], [27.615508, 85.534535]] },
+              { name: "नाष्टोल", color: colors[1], coords: [[27.615900, 85.534503], [27.615116, 85.534497], [27.615140, 85.534267], [27.615865, 85.534229], [27.615967, 85.534267]] },
+              { name: "वसाटोल", color: colors[2], coords: [[27.615865, 85.534229], [27.615967, 85.534267], [27.615984, 85.533985], [27.615589, 85.533462], [27.615527, 85.533226], [27.615385, 85.532652], [27.614767, 85.533092], [27.614755, 85.532258], [27.614588, 85.532510], [27.614662, 85.533004], [27.614736, 85.533242], [27.614498, 85.533199], [27.614569, 85.533701], [27.614681, 85.534200], [27.615028, 85.534028], [27.615152, 85.533932], [27.615140, 85.534267]] },
+              { name: "लासाकोटोल", color: colors[3], coords: [[27.614681, 85.534200], [27.615028, 85.534028], [27.615152, 85.533932], [27.615107, 85.534393], [27.615095, 85.535222], [27.615199, 85.535415], [27.615035, 85.535444], [27.614831, 85.535407], [27.614524, 85.535243], [27.614092, 85.534497], [27.614439, 85.534302]] },
+              { name: "Manandhar toll", color: colors[4], coords: [[27.614736, 85.533242], [27.614498, 85.533199], [27.614451, 85.532998], [27.614184, 85.533004], [27.614170, 85.532658], [27.614279, 85.532279], [27.614510, 85.532100], [27.614558, 85.532263]] },
+              { name: "Dwakcha pull / Naya bazar", color: colors[5], coords: [[27.614750, 85.529616], [27.614455, 85.529026], [27.612354, 85.529562], [27.613619, 85.531772], [27.614674, 85.531719], [27.614605, 85.532108]] },
+              { name: "भुखाटोल", color: colors[6], coords: [[27.614855, 85.532094], [27.615397, 85.532652], [27.615615, 85.533510], [27.617238, 85.532143], [27.616518, 85.531727], [27.615211, 85.532089]] },
+              { name: "वहाटोल", color: colors[7], coords: [[27.615130, 85.534524], [27.615508, 85.534535], [27.615487, 85.535082], [27.615252, 85.535090], [27.615111, 85.535133], [27.615092, 85.534809]] },
+
+              { name: "Old darbur", color: colors[8], coords: [[27.614501, 85.533193], [27.614187, 85.533218], [27.613904, 85.533886], [27.614047, 85.534495], [27.614244, 85.534371], [27.614539, 85.534272], [27.614686, 85.534197], [27.614569, 85.533704]] }
+          ];
+
+          // Polygon Creation & Storage
+          const polygons = {};
+          areas.forEach(area => {
+              const polygon = L.polygon(area.coords, {
+                  color: area.color,
+                  fillColor: area.color,
+                  fillOpacity: 1
+              }).addTo(map).bindPopup(area.name);
+              console.log(area.color); // Logging color for debugging
+              polygons[area.name] = polygon; // Storing polygon reference
+          });
+
+          // Dynamic Navigation Links
+          $(".tf_div a").each(function(index) {
+              $(this).attr("data-name", areas[index]?.name);
+          });
+
+          // Hover Interaction (Popup Trigger)
+          $(".tf_div a").hover(
+              function() {
+                  const areaName = $(this).data("name");
+                  if (polygons[areaName]) {
+                      polygons[areaName].openPopup();
+                  }
+              },
+              function() {
+                  const areaName = $(this).data("name");
+                  if (polygons[areaName]) {
+                      polygons[areaName].closePopup();
+                  }
+              }
+          );
+      });
+  </script>
+  </div>
+ 
+<div class="overflow_container">
+ 
+  <div class="festival-container" id="festivalList"></div>
+
+  <!--
+<div class="timeline-container">
+  <div class="timeline-row" id="row1">
+      <div class="timeline"></div>
+  </div>
+  <div class="timeline-row" id="row2">
+      <div class="timeline"></div>
+  </div>
+</div>
+-->
+</div>
+</div>
+<!--
+<h1>📅 Upcoming Events</h1>
+
+<div class="event-container1">
+    <table>
+        <thead>
+            <tr>
+                <th>#</th>
+                <th>Occasion</th>
+                <th>English Date</th>
+                <th>Nepali Date</th>
+                <th>Days Left</th>
+            </tr>
+        </thead>
+
+        <tbody id="eventTableBody1"></tbody>
+    </table>
+</div>
+
+<div class="timeline-container1">
+    <h2>Event Timeline</h2>
+    <div class="timeline1" id="timeline1"></div>
+</div>
+-->
+<div class="forth_front">
+
+  <p class="tracking-in-expand b zoom-in">
+    Activities</p>
+    <div class="temp_row">
+    <div class="row_pictures">
+      <div class="image_row slide-in">
+        <img src="baja.jpg" alt ="">
+        <p class="image_p">
+          Musical Mandali
+        </p>
+      </div>
+<div class="image_row slide-in">
+  <img src="food.jpg" alt ="">
+  <p class="image_p">
+    Food and Drinks
+  </p>
+</div>
+
+<div class="image_row slide-in">
+  <img src="farming.jpg" alt ="">
+  <p class="image_p">
+    Farming
+  </p>
+</div>
+<div class="image_row slide-in">
+  <img src="jatra.jpg" alt ="">
+  <p class="image_p">
+    Jatra / Festivals
+  </p>
+</div>
+<div class="image_row slide-in">
+  <img src="edu.jpg" alt ="">
+  <p class="image_p">
+    Education and learning
+  </p>
+</div>
+<div class="image_row slide-in">
+  <img src="culture.jpg" alt ="">
+  <p class="image_p">
+    Culture and Heritage
+  </p>
+</div>
+    </div>
+    <div class="row_pictures">
+     <!---
+      <div class="image_row">
+        <img src="" alt ="">
+        <p class="image_p">
+          Something
+        </p>
+      </div>
+      <div class="image_row">
+        <img src="" alt ="">
+        <p class="image_p">
+          Something
+        </p>
+      </div>
+      <div class="image_row">
+        <img src="" alt ="">
+        <p class="image_p">
+          Something
+        </p>
+      </div>
+    -->
+      
+      
+      
+      
+          </div>
+        </div>
+      
+
+
+
+
+</div>
+
+
+</div>
+
+ 
+
+<div class="last_front">
+
+
+<div class="lf_div a">
+  <div style="display:block;align-items:center;text-align:center;">
+    <p>Designed by</p>
+    <a href="https://prageshshrestha.github.io/" style="font-size:2rem;">Pragesh Shrestha</a>
+
+    
+  </div>
+  
+  <div class="logo_footer">
+    <a href="https://www.facebook.com/pragesh.shrestha.9/" target="_blank"><i class="fab fa-facebook"></i></a>
+    <a href="https://github.com/PrageshShrestha" target="_blank"><i class="fab fa-github"></i></a>
+    <a href="https://www.linkedin.com/in/mohan-krishna-shrestha-a00212212/" target="_blank"><i class="fab fa-linkedin"></i></a>
+    <a href="https://www.instagram.com/pragesh_shrestha/?hl=en" target="_blank"><i class="fab fa-instagram"></i></a>
+    <a href="mailto:binormus006@gmail.com"><i class="far fa-envelope"></i></a>
+  </div>
+  
+
+</div>
+<div class="lf_div b">
+  <div style="display:block;align-items:center;text-align:center;">
+    <p>Information / content</p>
+    <a href="https://jojolopakhampu.com/" style="font-size:2rem;">Manish Shrestha</a>
+
+    
+  </div>
+  
+  <div class="logo_footer">
+    <a href="https://www.facebook.com/profile.php?id=61551064709132" target="_blank"><i class="fab fa-facebook"></i></a>
+   
+  </div>
+</div>
+
+
+
+
+
+
+   
+    <script>
+      gsap.registerPlugin(ScrollTrigger);
+    
+      gsap.to("#animatedText", {
+          scrollTrigger: {
+              trigger: "body",
+              start: "200vh bottom",
+              end: "50% center",
+              scrub: true
+          },
+          top: "150vh",
+          scale: 2.5,
+          opacity: .01,
+          letterSpacing: "1.5em",
+          rotateY: 20,
+          rotateX: 10,
+          ease: "power3.out"
+      });
+    
+      gsap.to("#animatedText", {
+          scrollTrigger: {
+              trigger: "body",
+              start: "50% center",
+              end: "bottom top",
+              scrub: true,
+              onUpdate: self => {
+                  if (self.progress > 0.5) {
+                      document.getElementById("animatedText").classList.add("filled");
+                      document.getElementById("animatedText").classList.remove("outline");
+                  } else {
+                      document.getElementById("animatedText").classList.add("outline");
+                      document.getElementById("animatedText").classList.remove("filled");
+                  }
+              }
+          },
+          left: "50%",
+          top: "25vh",
+          transform: "translate(-50%, 0) scale(1.1)",
+          opacity: 1,
+          letterSpacing: "0.2em",
+          rotateY: 0,
+          rotateX: 0,
+          duration: 2,
+          ease: "expo.out"
+      });
+    
+      function applyOutlineEffect() {
+          const text = document.getElementById("animatedText").innerText;
+          let letterElements = [];
+          document.getElementById("animatedText").innerHTML = "";
+    
+          for (let i = 0; i < text.length; i++) {
+              const span = document.createElement("span");
+              span.innerText = text[i];
+              span.classList.add("filled");
+              document.getElementById("animatedText").appendChild(span);
+              letterElements.push(span);
+          }
+    
+          function outlineLetter(index) {
+              if (index < letterElements.length) {
+                  gsap.set(letterElements[index], { className: "outline" });
+                  gsap.delayedCall(.2, () => {
+                      gsap.set(letterElements[index], { className: "filled" });
+                      outlineLetter(index + 1);
+                  });
+              } else {
+                  outlineLetter(0);
+              }
+          }
+    
+          outlineLetter(0);
+      }
+    
+      gsap.to("#animatedText", {
+          scrollTrigger: {
+              trigger: "body",
+              start: "bottom 40vh",
+              end: "bottom 0vh",
+              onEnter: () => applyOutlineEffect(),
+              once: true,
+          }
+      });
+    </script>
+    <script>
+    document.addEventListener("DOMContentLoaded", function () {
+    const elementsToAnimate = document.querySelectorAll(".fade-in, .slide-in, .zoom-in");
+
+    function handleScroll() {
+        elementsToAnimate.forEach(el => {
+            const rect = el.getBoundingClientRect();
+            const windowHeight = window.innerHeight;
+
+            if (rect.top < windowHeight - 100 && rect.bottom > 100) { 
+                // Element is in viewport → Add 'show' class
+                el.classList.add("show");
+            } else {
+                // Element is out of viewport → Remove 'show' class
+                el.classList.remove("show");
+            }
+        });
+    }
+
+    window.addEventListener("scroll", handleScroll);
+    handleScroll(); // Run once in case elements are already in view
+});
+
+document.addEventListener("DOMContentLoaded", function () {
+    const elementsToAnimate1 = document.querySelectorAll(".fade-in1, .slide-in1, .zoom-in1");
+
+    function handleScroll1() {
+        elementsToAnimate1.forEach(el => {
+            const rect = el.getBoundingClientRect();
+            const windowHeight = window.innerHeight;
+
+            if (rect.top < windowHeight - 100 && rect.bottom > 100) { 
+                el.classList.add("show1");
+            } else {
+                el.classList.remove("show1");
+            }
+        });
+    }
+
+    window.addEventListener("scroll", handleScroll1);
+    handleScroll1();
+
+});
+    $(document).ready(function() {
+      const specialOccasions = [
+                { occasion: "Maghe Sankranti", engDate: new Date('2025-01-14'), nepDate: "2081-10-01" },
+                { occasion: "Maha Shivaratri", engDate: new Date('2025-02-26'), nepDate: "2081-11-14" },
+
+                { occasion: "Biska Jatra", engDate: new Date('2025-04-14'), nepDate: "2082-01-01" },
+                { occasion: "Sithi Nakha", engDate: new Date('2025-06-01'), nepDate: "2082-02-18" },
+
+                { occasion: "Buddha Jayanti", engDate: new Date('2025-05-12'), nepDate: "2082-01-29" },
+                { occasion: "Busara Puja", engDate: new Date('2025-06-30'), nepDate: "2082-03-16" },
+                { occasion: "Gathemangal", engDate: new Date('2025-07-14'), nepDate: "2083-03-30" },
+                { occasion: "Saparu / Gai Jatra /Janai Purnima", engDate: new Date('2025-08-09'), nepDate: "2083-04-25" },
+                { occasion: "Bhimsen Jatra", engDate: new Date('2025-09-07'), nepDate: "2083-05-22" },
+                { occasion: "Shree Krishna Janmastami", engDate: new Date('2025-08-16'), nepDate: "2083-04-31" },
+                { occasion: "Buddha Bhagwan Jatra", engDate: new Date('2025-08-19'), nepDate: "2083-05-03" },
+                { occasion: "IndraJatra", engDate: new Date('2025-09-06'), nepDate: "2083-05-21" },
+                { occasion: "Ghatasthapana / Dashain start", engDate: new Date('2025-09-22'), nepDate: "2083-06-06" },
+                { occasion: "Fulpati", engDate: new Date('2025-09-29'), nepDate: "2083-06-13" },
+                { occasion: "Bijaya Dashami", engDate: new Date('2025-10-02'), nepDate: "2083-06-16" },
+                { occasion: "Swanti Nakha", engDate: new Date('2025-10-20'), nepDate: "2083-07-03" },
+                { occasion: "Sakimana Punhe", engDate: new Date('2025-11-05'), nepDate: "2083-07-19" },
+                { occasion: "Yomari Punhe", engDate: new Date('2025-12-04'), nepDate: "2083-08-18" },
+                { occasion: "छयालापुन्ही", engDate: new Date('2026-01-03'), nepDate: "2083-09-19" },
+                { occasion: "Maghe Sankranti", engDate: new Date('2026-01-15'), nepDate: "2083-10-01" },
+                { occasion: "Fagu Punhe(Holi)", engDate: new Date('2025-03-13'), nepDate: "2081-11-29" },
+
+                { occasion: "NavaDurga Jatra", engDate: new Date('2025-03-12'), nepDate: "2081-11-28" },
+
+
+            ];
+            specialOccasions.sort((a, b) => {
+                const [aYear, aMonth, aDay] = a.nepDate.split('-').map(Number);
+                const [bYear, bMonth, bDay] = b.nepDate.split('-').map(Number);
+                return (aYear - bYear) || (aMonth - bMonth) || (aDay - bDay);
+            });
+        specialOccasions.forEach(event => {
+          const today = new Date();
+
+                    const engDateStr = event.engDate.toLocaleDateString('en-US', { month: 'short', day: 'numeric' });
+                    const timeDiff = event.engDate - today;
+                    const daysLeft = Math.ceil(timeDiff / (1000 * 60 * 60 * 24));
+                    const daysLeftText = daysLeft > 0 ? `${daysLeft} days left` : '';
+            $("#festivalList").append(
+                `<div class="festival-box">
+                    <div style="display:inline-flex;width:90%;justify-content: space-between;"><div style="font-weight:900;float:left;">${event.occasion}</div>
+                       <p style="color:red; float:right;"> ${daysLeftText}</p>
+                      </div>
+                    <br>
+                   <div style="display:inline-flex;width:90%;justify-content: space-between;margin-top:1vh; ">
+                  <p style="float:left;">${event.nepDate}</p>
+               
+                  <p style="float:right;"> ${engDateStr}</p>
+                   </div>
+                 
+                </div>`
+            );
+        });
+    });
+</script>
+
+
+
