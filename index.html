@@ -2,7 +2,7 @@
 <!DOCTYPE html>
 <html>
 <head>
-    <title>खम्पू</title>
+    <title>OpenStreetMap with Layers</title>
 
     <!-- Include Leaflet CSS -->
     <link rel="icon" type="image/png" href="icon.PNG">
@@ -167,72 +167,128 @@ tagsData.forEach(tagName => {
         <div id="map"></div>
         
     </div>
-  
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/ol@v7.5.1/ol.css">
+    <script src="https://cdn.jsdelivr.net/npm/ol@v7.5.1/dist/ol.js"></script>
     <script>
       $(document).ready(function() {
-          // Map Initialization
-          const map = L.map('map').setView([27.61528, 85.53389], 17);
+    // Map Initialization using OpenLayers
+    const map = new ol.Map({
+        target: 'map', // Assuming you have a div with id="map"
+        layers: [
+            new ol.layer.Tile({
+                source: new ol.source.OSM() // OpenStreetMap as the tile source
+            })
+        ],
+        view: new ol.View({
+            center: ol.proj.fromLonLat([85.53389, 27.61528]), // Panauti coordinates
+            zoom: 17
+        })
+    });
 
-          // OpenStreetMap Layer
-          L.tileLayer('https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png', {
-              attribution: 'KHAMPU',
-              maxZoom: 19
-          }).addTo(map);
+    // Color Palette
+    const colors = [
+    "rgba(255, 0, 0, 0.4)",   // "#FF0000" with 0.1 opacity
+    "rgba(0, 255, 0, 0.4)",   // "#00FF00" with 0.1 opacity
+    "rgba(0, 0, 255, 0.4)",   // "#0000FF" with 0.1 opacity
+    "rgba(255, 255, 0, 0.4)", // "#FFFF00" with 0.1 opacity
+    "rgba(255, 0, 255, 0.4)", // "#FF00FF" with 0.1 opacity
+    "rgba(0, 255, 255, 0.4)", // "#00FFFF" with 0.1 opacity
+    "rgba(255, 153, 0, 0.4)", // "#FF9900" with 0.1 opacity
+    "rgba(153, 0, 255, 0.4)", // "#9900FF" with 0.1 opacity
+    "rgba(0, 255, 153, 0.4)"  // "#00FF99" with 0.1 opacity
+];
 
-          // Color Palette
-          const colors = [
-              "#FF0000", "#00FF00", "#0000FF", "#FFFF00", "#FF00FF",
-              "#00FFFF", "#FF9900", "#9900FF", "#00FF99"
-          ];
+    // Area Data
+    const areas = [
+        { name: "याकाक्षे टोल", color: colors[0], coords: [[85.534503, 27.615900], [85.534734, 27.616316], [85.535841, 27.615836], [85.535104, 27.615489], [85.534535, 27.615508]] },
+        { name: "नाष्टोल", color: colors[1], coords: [[85.534503, 27.615900], [85.534497, 27.615116], [85.534267, 27.615140], [85.534229, 27.615865], [85.534267, 27.615967]] },
+        { name: "वसाटोल", color: colors[2], coords: [[85.534229, 27.615865], [85.534267, 27.615967], [85.533985, 27.615984], [85.533462, 27.615589], [85.533226, 27.615527], [85.532652, 27.615385], [85.533092, 27.614767], [85.532258, 27.614755], [85.532510, 27.614588], [85.533004, 27.614662], [85.533242, 27.614736], [85.533199, 27.614498], [85.533701, 27.614569], [85.534200, 27.614681], [85.534028, 27.615028], [85.533932, 27.615152], [85.534267, 27.615140]] },
+        { name: "लासाकोटोल", color: colors[3], coords: [[85.534200, 27.614681], [85.534028, 27.615028], [85.533932, 27.615152], [85.534393, 27.615107], [85.535222, 27.615095], [85.535415, 27.615199], [85.535444, 27.615035], [85.535407, 27.614831], [85.535243, 27.614524], [85.534497, 27.614092], [85.534302, 27.614439]] },
+        { name: "Manandhar toll", color: colors[4], coords: [[85.533242, 27.614736], [85.533199, 27.614498], [85.532998, 27.614451], [85.533004, 27.614184], [85.532658, 27.614170], [85.532279, 27.614279], [85.532100, 27.614510], [85.532263, 27.614558]] },
+        { name: "Dwakcha pull / Naya bazar", color: colors[5], coords: [[85.529616, 27.614750], [85.529026, 27.614455], [85.529562, 27.612354], [85.531772, 27.613619], [85.531719, 27.614674], [85.532108, 27.614605]] },
+        { name: "भुखाटोल", color: colors[6], coords: [[85.532094, 27.614855], [85.532652, 27.615397], [85.533510, 27.615615], [85.532143, 27.617238], [85.531727, 27.616518], [85.532089, 27.615211]] },
+        { name: "वहाटोल", color: colors[7], coords: [[85.534524, 27.615130], [85.534535, 27.615508], [85.535082, 27.615487], [85.535090, 27.615252], [85.535133, 27.615111], [85.534809, 27.615092]] },
+        { name: "Old darbur", color: colors[8], coords: [[85.533193, 27.614501], [85.533218, 27.614187], [85.533886, 27.613904], [85.534495, 27.614047], [85.534371, 27.614244], [85.534272, 27.614539], [85.534197, 27.614686], [85.533704, 27.614569]] }
+    ];
 
-          // Area Data
-          const areas = [
-              { name: "याकाक्षे टोल", color: colors[0], coords: [[27.615900, 85.534503], [27.616316, 85.534734], [27.615836, 85.535841], [27.615489, 85.535104], [27.615508, 85.534535]] },
-              { name: "नाष्टोल", color: colors[1], coords: [[27.615900, 85.534503], [27.615116, 85.534497], [27.615140, 85.534267], [27.615865, 85.534229], [27.615967, 85.534267]] },
-              { name: "वसाटोल", color: colors[2], coords: [[27.615865, 85.534229], [27.615967, 85.534267], [27.615984, 85.533985], [27.615589, 85.533462], [27.615527, 85.533226], [27.615385, 85.532652], [27.614767, 85.533092], [27.614755, 85.532258], [27.614588, 85.532510], [27.614662, 85.533004], [27.614736, 85.533242], [27.614498, 85.533199], [27.614569, 85.533701], [27.614681, 85.534200], [27.615028, 85.534028], [27.615152, 85.533932], [27.615140, 85.534267]] },
-              { name: "लासाकोटोल", color: colors[3], coords: [[27.614681, 85.534200], [27.615028, 85.534028], [27.615152, 85.533932], [27.615107, 85.534393], [27.615095, 85.535222], [27.615199, 85.535415], [27.615035, 85.535444], [27.614831, 85.535407], [27.614524, 85.535243], [27.614092, 85.534497], [27.614439, 85.534302]] },
-              { name: "Manandhar toll", color: colors[4], coords: [[27.614736, 85.533242], [27.614498, 85.533199], [27.614451, 85.532998], [27.614184, 85.533004], [27.614170, 85.532658], [27.614279, 85.532279], [27.614510, 85.532100], [27.614558, 85.532263]] },
-              { name: "Dwakcha pull / Naya bazar", color: colors[5], coords: [[27.614750, 85.529616], [27.614455, 85.529026], [27.612354, 85.529562], [27.613619, 85.531772], [27.614674, 85.531719], [27.614605, 85.532108]] },
-              { name: "भुखाटोल", color: colors[6], coords: [[27.614855, 85.532094], [27.615397, 85.532652], [27.615615, 85.533510], [27.617238, 85.532143], [27.616518, 85.531727], [27.615211, 85.532089]] },
-              { name: "वहाटोल", color: colors[7], coords: [[27.615130, 85.534524], [27.615508, 85.534535], [27.615487, 85.535082], [27.615252, 85.535090], [27.615111, 85.535133], [27.615092, 85.534809]] },
+    // Polygon Creation & Storage
+    const polygons = {};
+    areas.forEach(area => {
+    const polygon = new ol.Feature({
+        geometry: new ol.geom.Polygon([area.coords.map(coord => ol.proj.fromLonLat(coord))]),
+        name: area.name
+    });
 
-              { name: "Old darbur", color: colors[8], coords: [[27.614501, 85.533193], [27.614187, 85.533218], [27.613904, 85.533886], [27.614047, 85.534495], [27.614244, 85.534371], [27.614539, 85.534272], [27.614686, 85.534197], [27.614569, 85.533704]] }
-          ];
+    const vectorSource = new ol.source.Vector({
+        features: [polygon]
+    });
 
-          // Polygon Creation & Storage
-          const polygons = {};
-          areas.forEach(area => {
-              const polygon = L.polygon(area.coords, {
-                  color: area.color,
-                  fillColor: area.color,
-                  fillOpacity: 1
-              }).addTo(map).bindPopup(area.name);
-              console.log(area.color); // Logging color for debugging
-              polygons[area.name] = polygon; // Storing polygon reference
-          });
 
-          // Dynamic Navigation Links
-          $(".tf_div a").each(function(index) {
-              $(this).attr("data-name", areas[index]?.name);
-          });
+        const vectorLayer = new ol.layer.Vector({
+            source: vectorSource,
+            style: new ol.style.Style({
+                fill: new ol.style.Fill({
+                    color: area.color
+                }),
+                stroke: new ol.style.Stroke({
+                    color: area.color,
+                    width: 2
+                })
+            })
+        });
 
-          // Hover Interaction (Popup Trigger)
-          $(".tf_div a").hover(
-              function() {
-                  const areaName = $(this).data("name");
-                  if (polygons[areaName]) {
-                      polygons[areaName].openPopup();
-                  }
-              },
-              function() {
-                  const areaName = $(this).data("name");
-                  if (polygons[areaName]) {
-                      polygons[areaName].closePopup();
-                  }
-              }
-          );
-      });
-  </script>
+        map.addLayer(vectorLayer);
+        polygons[area.name] = vectorLayer;
+
+        // Popup functionality (OpenLayers has a different approach)
+        polygon.on('change', function(evt){
+            let feature = evt.target;
+            let extent = feature.getGeometry().getExtent();
+            let center = ol.extent.getCenter(extent);
+            let popupContent = area.name;
+
+            // Create a popup overlay
+            const popup = new ol.Overlay({
+              element: document.getElementById('popup'),
+              positioning: 'bottom-center',
+              stopEvent: false,
+            });
+
+            map.addOverlay(popup);
+
+            popup.setPosition(center);
+            document.getElementById('popup-content').innerHTML = popupContent;
+            document.getElementById('popup').style.display = 'block';
+
+            map.on('pointermove', function(evt){
+                let feature = map.forEachFeatureAtPixel(evt.pixel, function (feature) {
+                    return feature;
+                });
+                if(!feature){
+                    document.getElementById('popup').style.display = 'none';
+                }
+            });
+
+        });
+
+    });
+
+    // Hover Interaction (Popup Trigger)
+    $(".tf_div a").hover(
+        function() {
+            const areaName = $(this).data("name");
+            if (polygons[areaName]) {
+                // Trigger the popup by simulating a click on the polygon feature
+                polygons[areaName].getSource().getFeatures()[0].changed();
+            }
+        },
+        function() {
+            // Hide the popup when mouse leaves the link
+            document.getElementById('popup').style.display = 'none';
+        }
+    );
+});
+</script>
   </div>
  
 <div class="overflow_container">
