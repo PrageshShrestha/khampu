@@ -2,7 +2,7 @@
 <!DOCTYPE html>
 <html>
 <head>
-    <title>Khampu</title>
+    <title>खम्पू</title>
 
     <!-- Include Leaflet CSS -->
     <link rel="icon" type="image/png" href="icon.PNG">
@@ -126,7 +126,22 @@
     <div class="tf_div">
    
   </div>
-  
+  <div id="popup" class="ol-popup" style="display: none;">
+    <div id="popup-content"></div>
+</div>
+<style>
+    .ol-popup {
+        position: absolute;
+        background-color: white;
+        box-shadow: 0 1px 4px rgba(0, 0, 0, 0.2);
+        padding: 15px;
+        border-radius: 10px;
+        border: 1px solid #cccccc;
+        bottom: 12px;
+        left: -50px;
+        min-width: 150px;
+    }
+</style>
    <script>
     // आपका डेटा
 const tagsData = [
