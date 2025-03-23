@@ -311,9 +311,8 @@ tagsData.forEach(tagName => {
 });
 </script>
   </div>
- 
+
 <div class="overflow_container">
- 
   <div class="festival-container" id="festivalList"></div>
 
   <!--
@@ -360,9 +359,9 @@ tagsData.forEach(tagName => {
     <div class="row_pictures">
       <div class="image_row slide-in">
         <img src="baja.jpg" alt ="">
-        <p class="image_p">
+        <p class="image_p" style="margin-top:5vh;">
           श्री श्वेत भैरव बाजा खल :<br>
-          Shree Swet Bhairab Baja Khala
+          <span style="font-size:.9rem;font-weight:200;color:white;">Shree Swet Bhairab Baja Khala</span>
         </p>
       </div>
 <div class="image_row slide-in">
@@ -639,6 +638,9 @@ document.addEventListener("DOMContentLoaded", function () {
                 const [bYear, bMonth, bDay] = b.nepDate.split('-').map(Number);
                 return (aYear - bYear) || (aMonth - bMonth) || (aDay - bDay);
             });
+            $("#festivalList").append(
+              `<p style="width:100%;text-align:center;align-items:center;color:white;font-size:1rem;font-weight:500;">Upcomming events</p>
+              `);
         specialOccasions.forEach(event => {
           const today = new Date();
 
