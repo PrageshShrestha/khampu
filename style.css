@@ -1,14 +1,6 @@
 
 
-.namonamah {
-  position: absolute;
-  width: 50px;
-  height: 50px;
-  filter: invert(100%);
-  top: 10px;
-  left: 50%; /* Position the left edge at the horizontal center */
-  transform: translateX(-50%); /* Shift the element back by half its width */
-}
+
 
 .btn-17,
 .btn-17 *,
@@ -20,12 +12,33 @@
   box-sizing: border-box;
   color:white
 }
+.namonamah {
+  position: absolute;
+  width: 50px;
+  height: 50px;
+  filter: invert(100%);
+  top: 10px;
+  left: 50%; /* Position the left edge at the horizontal center */
+  transform: translateX(-50%); /* Shift the element back by half its width */
+}
 .p_tag{
   width:90%;
   margin-left:5%;
 
 }
+.book_div{
+  width:auto;
+  height:auto;
+  text-align:left;
+  align-items:center;
+  color:white;
+  margin-bottom:15vh;
+}
+.book_div p ,a{
+  color:white;
+  text-decoration:none;
 
+}
 .image_row{
   transition:.2s ease-in-out;
   cursor:pointer;
@@ -170,7 +183,7 @@ z-index:5;
 .img_ife.a{
   margin-top:-54vh;
 margin-left:-5vw;
-transform:scaleX(-.9);
+transform:scaleX(.9);
 
 }
 .img_ife.b{
@@ -180,7 +193,9 @@ transform:scaleX(.9);
 z-index:1;
 
 }
-
+.img_if.i{
+  transform:scaleX(.8);
+}
 svg {
     font-family: 'Dancing Script', cursive; /* Use the specific font */
     width: 100%; height: 100%;
@@ -217,7 +232,7 @@ transform:scaleX(-.9);
   
   margin-top:-30vh;
 margin-left:1vw;
-transform:scaleX(-.9);
+transform:scaleX(.7);
 
 }
 .img_ife.e{
@@ -394,14 +409,15 @@ justify-content: space-between;
 }
 .img_if.b{
   margin-left:-2vw;
+  transform:scaleX(.8);
 }
 .img_if.c{
   transform:scaleX(1.2);
 }
 .img_if.d{
-  transform:scaleX(1.2);
+  transform:scaleX(1);
   margin-left:-1vw;
-
+  filter:grayscale(100%);
 }
 .img_if.g{
     transform:scaleX(1.5);
