@@ -561,7 +561,7 @@ display:inline-flex;
 }
 .textContainer {
     position: fixed;
-    left: 50%;
+    left: 0%;
     top: 150vh;
     transform: translate(0%, 0) scale(5);
     font-size: 5vw;
