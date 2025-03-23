@@ -27,12 +27,13 @@
 
 }
 .book_div{
+  margin-top:5vh;
   width:auto;
   height:auto;
   text-align:left;
   align-items:center;
   color:white;
-  margin-bottom:15vh;
+  margin-bottom:2vh;
 }
 .book_div p ,a{
   color:white;
@@ -162,7 +163,9 @@
         .festival-box {
           width:100%;
           
-          height:10vh;
+          
+         
+          height:auto;
             background:black;
             text-align: center;
             position:sticky;
@@ -697,6 +700,7 @@ margin-bottom:-1vh;
   margin-bottom:4vw;
   padding:10px;
   display:flex;
+  
   justify-content:center;
   align-items:center;
   overflow:hidden;
@@ -868,7 +872,7 @@ height:80%;
     width:98vw;
     height:40vh;
     height:auto;
-    margin-top:0vh;
+    margin-top:20vh;
     overflow:hidden;
     background:none;
     margin-bottom:40vh;
@@ -907,10 +911,10 @@ height:80%;
     box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
 }
 .third_front .tracking-in-expand{
- margin-top:10vh;
+ margin-top:3vh;
 }
 .map_container{
-  margin-top:65vh;
+  margin-top:80vh;
 }
 #map {
    height: 50vh;
