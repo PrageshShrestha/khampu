@@ -665,6 +665,52 @@ document.addEventListener("DOMContentLoaded", function () {
         });
     });
 </script>
+<script>
+  document.addEventListener('DOMContentLoaded', function() {
+    const messageDiv = document.getElementById('browser-message');
+
+    // Check if it's a standalone app (like Messenger in-app browser)
+    const isStandalone = (window.navigator.standalone || window.matchMedia('(display-mode: standalone)').matches);
+
+    // Check for common in-app browser user agents
+    const userAgent = navigator.userAgent.toLowerCase();
+    const isMessenger = userAgent.indexOf('fb_iab') > -1; // Facebook in-app browser
+    const isInstagram = userAgent.indexOf('instagram') > -1; // Instagram in-app browser
+
+    if (isStandalone || isMessenger || isInstagram) {
+        // It's likely an in-app browser or a standalone app
+        messageDiv.textContent = "For best experience, open in a full browser.";
+        messageDiv.style.bottom = '20px';
+
+        setTimeout(function() {
+            messageDiv.style.bottom = '-50px';
+            setTimeout(function() {
+              messageDiv.style.display = 'none';
+            }, 500);
+        }, 3000);
+    } else {
+        // It's likely a regular browser
+        messageDiv.style.display = 'none'; // Don't show the message
+    }
+});
+</script>
+<div id="browser-message">
+  Please open in browser for better experience.
+</div>
+<style>
+  #browser-message {
+      position: fixed;
+      bottom: -50px; /* Start off-screen */
+      left: 50%;
+      transform: translateX(-50%);
+      background-color: rgba(0, 0, 0, 0.8);
+      color: white;
+      padding: 15px 20px;
+      border-radius: 5px;
+      transition: bottom 0.5s ease-in-out;
+      z-index: 1000;
+  }
+</style>
 
 
 
