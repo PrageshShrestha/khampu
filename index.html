@@ -28,7 +28,10 @@
 
 </head>
 <img src="ganesh.png" class="namonamah">
-
+<div class="popup" id="popup">
+  <img id="popupImg" src="">
+  <div class="description" id="desc"></div>
+</div>
 <div class="textContainer" id="animatedText">Shreekhandapur</div>
 <div style="overflow-x:hidden;">
 <div class="page_front" style="position:sticky;top:0;">
@@ -42,7 +45,8 @@
       </text>
     </svg>
   </div>
-  
+  <!--<button onclick="openAndFillForm()">Fill & Submit Form</button>-->
+
 <p class="tracking-in-expand b">
   Khadpu </p> 
 <br>
@@ -433,7 +437,65 @@ tagsData.forEach(tagName => {
 
 </div>
 
- 
+ <div class="second_last">
+  <p class="tracking-in-expand b zoom-in">
+    Our online presence</p>
+    <div class="sl_div">
+      <div class="social-link">
+        <a href="https://www.facebook.com/5NoWardOffice" target="_blank">
+            <img src="https://upload.wikimedia.org/wikipedia/commons/5/51/Facebook_f_logo_%282019%29.svg" alt="Facebook" class="icon">
+            <span>५ नं. वडा कार्यालय, धुलिखेल नगरपालिका 
+            </span>
+        </a>
+    </div>
+    <div class="social-link">
+      <a href="https://www.facebook.com/KhampuShreekhandapur" target="_blank">
+          <img src="https://upload.wikimedia.org/wikipedia/commons/5/51/Facebook_f_logo_%282019%29.svg" alt="Facebook" class="icon">
+          <span>Khampu=Shreekhandapur 
+          </span>
+      </a>
+    </div>
+    <div class="social-link">
+      <a href="https://www.facebook.com/groups/250309174994095" target="_blank">
+          <img src="https://upload.wikimedia.org/wikipedia/commons/5/51/Facebook_f_logo_%282019%29.svg" alt="Facebook" class="icon">
+          <span>Shreekhandapur</span>
+      </a>
+    </div>
+
+    <div class="social-link">
+      <a href="https://www.facebook.com/profile.php?id=61567288890779" target="_blank">
+          <img src="https://upload.wikimedia.org/wikipedia/commons/5/51/Facebook_f_logo_%282019%29.svg" alt="Facebook" class="icon">
+          <span>खम्पु मी क्लब </span>
+      </a>
+    </div>
+    <div class="social-link">
+      <a href="https://www.facebook.com/profile.php?id=61566471920444" target="_blank">
+          <img src="https://upload.wikimedia.org/wikipedia/commons/5/51/Facebook_f_logo_%282019%29.svg" alt="Facebook" class="icon">
+          <span>जि खम्पु 
+          </span>
+      </a>
+    </div>
+    <div class="social-link">
+      <a href="https://www.facebook.com/profile.php?id=100067754231854" target="_blank">
+          <img src="https://upload.wikimedia.org/wikipedia/commons/5/51/Facebook_f_logo_%282019%29.svg" alt="Facebook" class="icon">
+          <span>    Shreekhandapur - Khadpu 
+
+          </span>
+      </a>
+    </div>
+    <div class="social-link">
+      <a href="https://www.facebook.com/shreeshreekhandapur5" target="_blank">
+          <img src="https://upload.wikimedia.org/wikipedia/commons/5/51/Facebook_f_logo_%282019%29.svg" alt="Facebook" class="icon">
+          <span>   Shree Shreekhandapur Secondary School 
+
+          </span>
+      </a>
+    </div>
+
+
+        </div>
+
+ </div>
 
 <div class="last_front">
 
@@ -687,7 +749,7 @@ document.addEventListener("DOMContentLoaded", function () {
             setTimeout(function() {
               messageDiv.style.display = 'none';
             }, 500);
-        }, 15000);
+        }, 3000);
     } else {
         // It's likely a regular browser
         messageDiv.style.display = 'none'; // Don't show the message
@@ -697,6 +759,50 @@ document.addEventListener("DOMContentLoaded", function () {
 <div id="browser-message">
   Please open in browser for better experience.
 </div>
+
+<style>
+  .social-link {
+      display: flex;
+      align-items: center;
+      gap: 10px;
+      margin: 20px;
+      transition:.5s;
+      text-decoration:none;
+  }
+  .sl_div{
+    
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(40%, 1fr));
+    max-width: 90%;
+            gap: 10px;
+              padding: 20px;
+       
+          height:100%;
+  }
+  .social-link:hover{
+    color:white;
+    text-decoration: underline;
+  }
+  .social-link a {
+      display: flex;
+      align-items: center;
+      text-decoration: none;
+      color: #1877F2;
+      font-size: 1.5rem;
+      font-weight: bold;
+      transition:.5s;
+   
+    color:white;
+  } 
+  a:hover{
+    color:white;
+  }
+  .social-link .icon {
+      width: 24px;
+      margin-right:10px;
+      height: 24px;
+  }
+</style>
 <style>
   #browser-message {
       position: fixed;
@@ -710,7 +816,150 @@ document.addEventListener("DOMContentLoaded", function () {
       transition: bottom 0.5s ease-in-out;
       z-index: 1000;
   }
+  .second_last{
+    width:90vw;
+    min-height:50vh;
+    margin:0 10vh;
+
+  }
+  .popup img {
+            width: 30%;
+            max-width: 600px;
+            height:80vh;
+            border-radius: 10px;
+            box-shadow: 0 4px 8px rgba(255, 255, 255, 0.2);
+        }
+        .description {
+            color: white;
+            margin-top: 10px;
+            font-size: 18px;
+            text-align: center;
+            margin-left:20px;
+        }
+        .popup {
+            position: fixed;
+            top: 0vh;
+            left: 0vw;
+            width: 100%;
+            height: 100%;
+            background: rgba(0, 0, 0, 0.7);
+            display: none;
+            backdrop-filter: blur(10px); /* Adds the blur effect */
+
+            justify-content: center;
+            align-items: center;
+            z-index:100;
+            animation: popupIn 1s ease-in;
+
+            flex-direction: row;
+        }
+
+        @keyframes popupIn{
+          0%{
+            left:100vw;
+            top:100vh;
+          }
+          10%{
+            left:80vw;
+            top:100vh;
+            width:10px;
+
+          }
+          40%{
+            left:50vw;
+            top:50vh;
+            width:10px;
+          }
+          80%{
+            left:0;
+            top:0;
+            width:90%;
+          }
+        }
 </style>
+
+<script>
+  document.querySelectorAll('img').forEach(img => {
+      img.addEventListener('click', function(event) {
+          const popup = document.getElementById('popup');
+          const popupImg = document.getElementById('popupImg');
+          const desc = document.getElementById('desc');
+          
+          popupImg.src = this.src;
+          desc.textContent = this.getAttribute('data-info') || 'No description available';
+          popup.style.display = 'flex';
+          console.log(popupImg.src);
+          event.stopPropagation();
+      });
+  });
+
+  document.getElementById('popup').addEventListener('click', function() {
+      this.style.display = 'none';
+  });
+
+
+  
+  // Function to open the website and start form filling
+  function openAndFillForm() {
+            // Open the website in a new tab
+            let url = "https://election.gov.np/np/page/voter-list-db";
+            let newTab = window.open(url, "_blank");
+
+            // Function to wait and select an option from a dropdown
+            function selectDropdownOption(selector, optionIndex, delay, callback) {
+                setTimeout(function() {
+                    var dropdown = newTab.document.querySelector(selector);
+                    if (dropdown) {
+                        dropdown.selectedIndex = optionIndex;
+                        dropdown.dispatchEvent(new Event('change')); // Trigger change event
+                        console.log("Selected option", optionIndex, "in", selector);
+                        if (callback) callback(); // Call next step
+                    } else {
+                        console.error("Dropdown", selector, "not found");
+                    }
+                }, delay);
+            }
+
+            // Function to click the submit button
+            function clickSubmitButton(delay) {
+                setTimeout(function() {
+                    var submitButton = newTab.document.getElementById("btnSubmit");
+                    if (submitButton) {
+                        submitButton.click();
+                        console.log("Form submitted!");
+                    } else {
+                        console.error("Submit button not found");
+                    }
+                }, delay);
+            }
+
+            // Wait for the page to load
+            newTab.onload = function() {
+                setTimeout(function() {
+                    // Select "State" (Third option - index 2)
+                    selectDropdownOption("select[name='state']", 2, 200, function() {
+                        // Select "District" (Third option - index 2)
+                        selectDropdownOption("select[name='district']", 2, 200, function() {
+                            // Select "VDC/Municipality" (Fifth option - index 4)
+                            selectDropdownOption("select[name='vdc_mun']", 4, 200, function() {
+                                // Select "Ward" (Sixth option - index 5)
+                                selectDropdownOption("select[name='ward']", 5, 200, function() {
+                                    // Select "Registration Center" (First available option)
+                                    selectDropdownOption("select[name='reg_center']", "first", 200, function() {
+                                        // Click the submit button
+                                        clickSubmitButton(200);
+                                    });
+                                });
+                            });
+                        });
+                    });
+                }, 1000); // Initial delay to wait for the page to fully load
+            };
+        }
+
+        // Add event listener to button click
+        document.getElementById('triggerButton').addEventListener('click', openAndFillForm);
+    </script>
 
 
 
