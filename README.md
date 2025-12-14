@@ -3,8 +3,10 @@
 ## Discover the Beauty of Khadpu town of Dhulikhel
 ## A town of the past , the present and the future.
 ## Since Lichhivi period , reorganized in 1153 BS
-#(1097 AD).
+# (1097 AD).
+
 👉 [Visit the Info Site](https://prageshshrestha.github.io/khampu) for more details, maps, and resources!
+
 
 Stunning views of Shree Swet Bhairab Temple
 ![](https://scontent.fktm8-1.fna.fbcdn.net/v/t39.30808-6/582622397_823902827214955_657408509950107752_n.jpg?_nc_cat=100&_nc_cb=99be929b-ad57045b&ccb=1-7&_nc_sid=aa7b47&_nc_ohc=q42SQy2Pw-gQ7kNvwFedvwg&_nc_oc=AdkN4w45vhdBxMNKAnMpW-Sj6Kqejvz-TeEF26mWlzmRpDS4EA-oLU2l-eKg19Lw1PndUbL3p4IQ4gRwQim-3xhN&_nc_zt=23&_nc_ht=scontent.fktm8-1.fna&_nc_gid=JoBGZA0Hd_8GdzFBN6pd3Q&oh=00_AfljrSUTy5c17suFQhnTot47ptYuqEQVUAO9DCCaE2yl-w&oe=6944F42A)
