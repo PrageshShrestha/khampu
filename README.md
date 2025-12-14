@@ -1,8 +1,9 @@
-<img width="1024" height="1536" alt="image" src="https://github.com/user-attachments/assets/d9db0c89-222b-4afe-bd1c-9c7becf36b79" /># 🌄 Project Khampu
-Discover the Beauty of Khadpu town of Dhulikhel
-A town of the past , the present and the future.
-Since Lichhivi period , reorganized in 1153 BS
-(1097 AD).
+# 🌄 Project Khampu
+
+## Discover the Beauty of Khadpu town of Dhulikhel
+## A town of the past , the present and the future.
+## Since Lichhivi period , reorganized in 1153 BS
+#(1097 AD).
 👉 [Visit the Info Site](https://prageshshrestha.github.io/khampu) for more details, maps, and resources!
 
 Stunning views of Shree Swet Bhairab Temple
@@ -18,6 +19,6 @@ Hiti Culture
 Project Screenshots
 Here are some captures from the Khampu info site:
 
-  [Khampu Screenshot 1](s3.png)
-  [Khampu Screenshot 2](s2.png)
-  [Khampu Screenshot 3](s1.png)
+  ![Khampu Screenshot 1](s3.png)
+  ![Khampu Screenshot 2](s2.png)
+  ![Khampu Screenshot 3](s1.png)
