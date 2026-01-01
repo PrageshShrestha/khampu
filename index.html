@@ -153,7 +153,6 @@
     }
 </style>
    <script>
-    // आपका डेटा
 const tagsData = [
     "याकाक्षे टोल",
     "नाष्टोल",
@@ -166,10 +165,9 @@ const tagsData = [
     "Dwakcha pull / Naya bazar"
 ];
 
-// tf_div तत्व प्राप्त करें
+// tf_div 
 const tfDiv = document.querySelector('.tf_div');
 
-// प्रत्येक डेटा आइटम के लिए एक <a> टैग बनाएं और उसे tf_div में जोड़ें
 tagsData.forEach(tagName => {
     const aTag = document.createElement('a');
     aTag.textContent = tagName;
@@ -845,6 +843,7 @@ document.addEventListener("DOMContentLoaded", function () {
         // Add event listener to button click
         document.getElementById('triggerButton').addEventListener('click', openAndFillForm);
     </script>
+
 
 
 
