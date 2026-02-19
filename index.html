@@ -664,38 +664,9 @@ document.addEventListener("DOMContentLoaded", function () {
 
 });
     $(document).ready(function() {
-      const specialOccasions = [
-                { occasion: "Maghe Sankranti", engDate: new Date('2025-01-14'), nepDate: "2081-10-01" },
-                { occasion: "Maha Shivaratri", engDate: new Date('2025-02-26'), nepDate: "2081-11-14" },
-
-                { occasion: "Biska Jatra", engDate: new Date('2025-04-14'), nepDate: "2082-01-01" },
-                { occasion: "Sithi Nakha", engDate: new Date('2025-06-01'), nepDate: "2082-02-18" },
-
-                { occasion: "Buddha Jayanti", engDate: new Date('2025-05-12'), nepDate: "2082-01-29" },
-                { occasion: "Busara Puja", engDate: new Date('2025-06-30'), nepDate: "2082-03-16" },
-                { occasion: "Gathemangal", engDate: new Date('2025-07-23'), nepDate: "2083-04-07" },
-                { occasion: "Saparu / Gai Jatra /Janai Purnima", engDate: new Date('2025-08-10'), nepDate: "2083-04-25" },
-                { occasion: "Bhimsen Jatra", engDate: new Date('2025-09-07'), nepDate: "2083-05-22" },
-                { occasion: "Shree Krishna Janmastami", engDate: new Date('2025-08-16'), nepDate: "2083-04-31" },
-                { occasion: "Buddha Bhagwan Jatra", engDate: new Date('2025-08-19'), nepDate: "2083-05-03" },
-                { occasion: "IndraJatra", engDate: new Date('2025-09-06'), nepDate: "2083-05-21" },
-                { occasion: "Ghatasthapana / Dashain start", engDate: new Date('2025-09-22'), nepDate: "2083-06-06" },
-                { occasion: "Fulpati", engDate: new Date('2025-09-29'), nepDate: "2083-06-13" },
-                { occasion: "Bijaya Dashami", engDate: new Date('2025-10-02'), nepDate: "2083-06-16" },
-                { occasion: "Swanti Nakha", engDate: new Date('2025-10-20'), nepDate: "2083-07-03" },
-                { occasion: "Sakimana Punhe", engDate: new Date('2025-11-05'), nepDate: "2083-07-19" },
-                { occasion: "Yomari Punhe", engDate: new Date('2025-12-04'), nepDate: "2083-08-18" },
-                { occasion: "छयालापुन्ही", engDate: new Date('2026-01-03'), nepDate: "2083-09-19" },
-                { occasion: "Maghe Sankranti", engDate: new Date('2026-01-15'), nepDate: "2083-10-01" },
-                { occasion: "Fagu Punhe(Holi)", engDate: new Date('2025-03-13'), nepDate: "2081-11-29" },
-
-                { occasion: "NavaDurga Jatra", engDate: new Date('2025-03-12'), nepDate: "2081-11-28" },
-
-
-            ];
-
-        const specialOccasions = [
-    // --- LATER IN 2026 ---
+      
+const specialOccasions = [
+    // --- REST OF 2026 ---
     { occasion: "NavaDurga Jatra", engDate: new Date('2026-03-02'), nepDate: "2082-11-18" },
     { occasion: "Fagu Punhe (Holi)", engDate: new Date('2026-03-03'), nepDate: "2082-11-19" },
     { occasion: "Biska Jatra", engDate: new Date('2026-04-14'), nepDate: "2083-01-01" },
@@ -711,12 +682,12 @@ document.addEventListener("DOMContentLoaded", function () {
     { occasion: "Ghatasthapana / Dashain start", engDate: new Date('2026-10-11'), nepDate: "2083-06-25" },
     { occasion: "Fulpati", engDate: new Date('2026-10-17'), nepDate: "2083-07-01" },
     { occasion: "Bijaya Dashami", engDate: new Date('2026-10-21'), nepDate: "2083-07-05" },
-    { occasion: "Swanti Nakha (Tihar Start)", engDate: new Date('2026-11-07'), nepDate: "2083-07-22" },
+    { occasion: "Swanti Nakha", engDate: new Date('2026-11-07'), nepDate: "2083-07-22" },
     { occasion: "Sakimana Punhe", engDate: new Date('2026-11-24'), nepDate: "2083-08-09" },
     { occasion: "Yomari Punhe", engDate: new Date('2026-12-23'), nepDate: "2083-09-08" },
     { occasion: "छयालापुन्ही", engDate: new Date('2026-12-24'), nepDate: "2083-09-09" },
 
-    // --- ALREADY GONE IN 2026, SO UPDATED TO 2027 ---
+    // --- INTO 2027 ---
     { occasion: "Maghe Sankranti", engDate: new Date('2027-01-15'), nepDate: "2083-10-01" },
     { occasion: "Maha Shivaratri", engDate: new Date('2027-03-06'), nepDate: "2083-11-22" }
 ];
@@ -870,6 +841,7 @@ document.addEventListener("DOMContentLoaded", function () {
         // Add event listener to button click
         document.getElementById('triggerButton').addEventListener('click', openAndFillForm);
     </script>
+
 
 
 
