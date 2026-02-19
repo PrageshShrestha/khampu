@@ -2457,3 +2457,181 @@ html{
         }
 
 }
+
+/* Temple Carousel Styles */
+.temple-carousel-container {
+    width: 90vw;
+    margin: 0 auto;
+    margin-top:25vh;
+    padding: 5vh 0;
+    text-align: center;
+}
+
+.carousel-header {
+    margin-bottom: 4vh;
+}
+
+.temple-description {
+    color: white;
+    font-size: 1.2rem;
+    margin-top: 5vh;
+    opacity: 0.9;
+    max-width: 80%;
+    margin-left: auto;
+    margin-right: auto;
+}
+
+.temple-carousel {
+    position: relative;
+    width: 100%;
+    max-width: 800px;
+    margin: 0 auto;
+    overflow: hidden;
+    border-radius: 15px;
+    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.5);
+}
+
+.carousel-track {
+    display: flex;
+    transition: transform 0.5s ease-in-out;
+}
+
+.temple-slide {
+    min-width: 100%;
+    position: relative;
+}
+
+.temple-img {
+    width: 100%;
+    height: 400px;
+    object-fit: cover;
+    border-radius: 15px;
+}
+
+.temple-caption {
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    background: linear-gradient(transparent, rgba(0, 0, 0, 0.8));
+    color: white;
+    padding: 20px;
+    font-size: 1.2rem;
+    font-weight: 600;
+    border-radius: 0 0 15px 15px;
+}
+
+.carousel-btn {
+    position: absolute;
+    top: 50%;
+    transform: translateY(-50%);
+    background: rgba(255, 255, 255, 0.2);
+    border: none;
+    color: white;
+    font-size: 1.5rem;
+    width: 50px;
+    height: 50px;
+    border-radius: 50%;
+    cursor: pointer;
+    transition: all 0.3s ease;
+    backdrop-filter: blur(10px);
+    z-index: 10;
+}
+
+.carousel-btn:hover {
+    background: rgba(255, 255, 255, 0.3);
+    transform: translateY(-50%) scale(1.1);
+}
+
+.prev-btn {
+    left: 20px;
+}
+
+.next-btn {
+    right: 20px;
+}
+
+.carousel-dots {
+    display: flex;
+    justify-content: center;
+    gap: 10px;
+    margin-top: 20px;
+}
+
+.dot {
+    width: 12px;
+    height: 12px;
+    border-radius: 50%;
+    background: rgba(255, 255, 255, 0.3);
+    cursor: pointer;
+    transition: all 0.3s ease;
+}
+
+.dot.active,
+.dot:hover {
+    background: white;
+    transform: scale(1.2);
+}
+
+/* Mobile Responsive */
+@media (max-width: 768px) {
+    .temple-carousel-container {
+        width: 95vw;
+        padding: 3vh 0;
+    }
+    
+    .temple-description {
+        font-size: 1rem;
+        max-width: 90%;
+    }
+    
+    .temple-img {
+        height: 300px;
+    }
+    
+    .carousel-btn {
+        width: 40px;
+        height: 40px;
+        font-size: 1.2rem;
+    }
+    
+    .prev-btn {
+        left: 10px;
+    }
+    
+    .next-btn {
+        right: 10px;
+    }
+    
+    .temple-caption {
+        font-size: 1rem;
+        padding: 15px;
+    }
+}
+
+@media (max-width: 411px) {
+    .temple-carousel-container {
+        width: 98vw;
+        padding: 2vh 0;
+    }
+    
+    .temple-description {
+        font-size: 0.9rem;
+        max-width: 95%;
+    }
+    
+    .temple-img {
+        height: 250px;
+    }
+    
+    .carousel-btn {
+        width: 35px;
+        height: 35px;
+        font-size: 1rem;
+    }
+    
+    .temple-caption {
+        font-size: 0.9rem;
+        padding: 10px;
+    }
+}

@@ -89,10 +89,10 @@
 
 </div>
 
-<div class="temple-carousel-container">
+<div class="temple-carousel-container slide-in">
   <div class="carousel-header">
     <div class="tracking-in-expand b"> 
-      द्यो छें <br> Temple 
+      द्यो छें <br> Temple <br>
     </div>
     <div class="temple-description">
       The home residing Gods themselves, designed in Pagoda style with ancient carvings, a true symbol of Khampu and a well-managed form of religious unity.
@@ -103,31 +103,31 @@
     <div class="carousel-track">
       <div class="temple-slide">
         <img src="img1.jpg" alt="Temple 1" class="temple-img">
-        <div class="temple-caption">Main Temple View</div>
+        <div class="temple-caption">Bhairabthan</div>
       </div>
       <div class="temple-slide">
         <img src="narayanthan.jpg" alt="Narayan Temple" class="temple-img">
-        <div class="temple-caption">Narayan Temple</div>
+        <div class="temple-caption">Narayanthan </div>
       </div>
       <div class="temple-slide">
         <img src="stupa1.jpg" alt="Stupa 1" class="temple-img">
-        <div class="temple-caption">Ancient Stupa</div>
+        <div class="temple-caption"> Stupa</div>
       </div>
       <div class="temple-slide">
         <img src="ganeshthan.jpg" alt="Ganesh Temple" class="temple-img">
-        <div class="temple-caption">Ganesh Temple</div>
+        <div class="temple-caption">Ganeshthan</div>
       </div>
       <div class="temple-slide">
         <img src="stupa2.jpg" alt="Stupa 2" class="temple-img">
-        <div class="temple-caption">Sacred Stupa</div>
+        <div class="temple-caption"> Stupa</div>
       </div>
       <div class="temple-slide">
         <img src="bhimsenthan.jpg" alt="Bhimsen Temple" class="temple-img">
-        <div class="temple-caption">Bhimsen Temple</div>
+        <div class="temple-caption">Bhimsenthan</div>
       </div>
       <div class="temple-slide">
         <img src="pokhari.jpg" alt="Pokhari" class="temple-img">
-        <div class="temple-caption">Sacred Pond</div>
+        <div class="temple-caption">Mahadev Pokhari</div>
       </div>
     </div>
     
@@ -886,6 +886,77 @@ const specialOccasions = [
 
         // Add event listener to button click
         document.getElementById('triggerButton').addEventListener('click', openAndFillForm);
+    </script>
+
+    <!-- Temple Carousel JavaScript -->
+    <script>
+        let currentSlideIndex = 0;
+        const totalSlides = 7;
+
+        function moveCarousel(direction) {
+            currentSlideIndex += direction;
+            
+            if (currentSlideIndex < 0) {
+                currentSlideIndex = totalSlides - 1;
+            } else if (currentSlideIndex >= totalSlides) {
+                currentSlideIndex = 0;
+            }
+            
+            updateCarousel();
+        }
+
+        function currentSlide(index) {
+            currentSlideIndex = index - 1;
+            updateCarousel();
+        }
+
+        function updateCarousel() {
+            const track = document.querySelector('.carousel-track');
+            const dots = document.querySelectorAll('.dot');
+            
+            // Move the carousel
+            track.style.transform = `translateX(-${currentSlideIndex * 100}%)`;
+            
+            // Update dots
+            dots.forEach((dot, index) => {
+                dot.classList.remove('active');
+                if (index === currentSlideIndex) {
+                    dot.classList.add('active');
+                }
+            });
+        }
+
+        // Auto-play carousel
+        setInterval(() => {
+            moveCarousel(1);
+        }, 5000);
+
+        // Touch/swipe support for mobile
+        let touchStartX = 0;
+        let touchEndX = 0;
+
+        const carousel = document.querySelector('.temple-carousel');
+        
+        carousel.addEventListener('touchstart', (e) => {
+            touchStartX = e.changedTouches[0].screenX;
+        });
+
+        carousel.addEventListener('touchend', (e) => {
+            touchEndX = e.changedTouches[0].screenX;
+            handleSwipe();
+        });
+
+        function handleSwipe() {
+            if (touchEndX < touchStartX - 50) {
+                moveCarousel(1); // Swipe left, go to next
+            }
+            if (touchEndX > touchStartX + 50) {
+                moveCarousel(-1); // Swipe right, go to previous
+            }
+        }
+
+        // Initialize carousel on page load
+        document.addEventListener('DOMContentLoaded', updateCarousel);
     </script>
 
 
