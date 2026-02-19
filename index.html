@@ -89,31 +89,71 @@
 
 </div>
 
-<div class="second_front slide-in">
-
-<div class="tracking-in-expand b"> 
-  द्यो छें <br> Temple 
-</div>
-<div style="margin-top:8vh;z-index:2;">
-  The home residing Gods themselves, designed in Pagoda style with ancient carvings, a true symbol of Khampu and a well-managed form of religious unity.
-</div>
-
-<div class="ife">
-  <img src="img1.jpg" alt = "" class="img_ife a">
-  <img src="narayanthan.jpg" alt = "" class="img_ife b">
-  <img src="stupa1.jpg" alt = "" class="img_ife c">
-  <img src="ganeshthan.jpg" alt = "" class="img_ife d">
-  <img src="stupa2.jpg" alt = "" class="img_ife e">
-  <img src="bhimsenthan.jpg" alt = "" class="img_ife f">
-  <img src="pokhari.jpg" alt = "" class="img_ife g">
-
-</div>
-<button class="btn-17" style="margin-top:4vh">
-  <span class="text-container">
-    <a href="https://earth.google.com/web/@27.61558313,85.53383114,1462.14676281a,1025.90516681d,35y,0.00000001h,3.66679884t,360r/data=CgRCAggBOgMKATBCAggASg0I____________ARAA" class="text">Visit us</a>
-  </span>
-</button>
-
+<div class="temple-carousel-container">
+  <div class="carousel-header">
+    <div class="tracking-in-expand b"> 
+      द्यो छें <br> Temple 
+    </div>
+    <div class="temple-description">
+      The home residing Gods themselves, designed in Pagoda style with ancient carvings, a true symbol of Khampu and a well-managed form of religious unity.
+    </div>
+  </div>
+  
+  <div class="temple-carousel">
+    <div class="carousel-track">
+      <div class="temple-slide">
+        <img src="img1.jpg" alt="Temple 1" class="temple-img">
+        <div class="temple-caption">Main Temple View</div>
+      </div>
+      <div class="temple-slide">
+        <img src="narayanthan.jpg" alt="Narayan Temple" class="temple-img">
+        <div class="temple-caption">Narayan Temple</div>
+      </div>
+      <div class="temple-slide">
+        <img src="stupa1.jpg" alt="Stupa 1" class="temple-img">
+        <div class="temple-caption">Ancient Stupa</div>
+      </div>
+      <div class="temple-slide">
+        <img src="ganeshthan.jpg" alt="Ganesh Temple" class="temple-img">
+        <div class="temple-caption">Ganesh Temple</div>
+      </div>
+      <div class="temple-slide">
+        <img src="stupa2.jpg" alt="Stupa 2" class="temple-img">
+        <div class="temple-caption">Sacred Stupa</div>
+      </div>
+      <div class="temple-slide">
+        <img src="bhimsenthan.jpg" alt="Bhimsen Temple" class="temple-img">
+        <div class="temple-caption">Bhimsen Temple</div>
+      </div>
+      <div class="temple-slide">
+        <img src="pokhari.jpg" alt="Pokhari" class="temple-img">
+        <div class="temple-caption">Sacred Pond</div>
+      </div>
+    </div>
+    
+    <button class="carousel-btn prev-btn" onclick="moveCarousel(-1)">
+      <i class="fas fa-chevron-left"></i>
+    </button>
+    <button class="carousel-btn next-btn" onclick="moveCarousel(1)">
+      <i class="fas fa-chevron-right"></i>
+    </button>
+    
+    <div class="carousel-dots">
+      <span class="dot active" onclick="currentSlide(1)"></span>
+      <span class="dot" onclick="currentSlide(2)"></span>
+      <span class="dot" onclick="currentSlide(3)"></span>
+      <span class="dot" onclick="currentSlide(4)"></span>
+      <span class="dot" onclick="currentSlide(5)"></span>
+      <span class="dot" onclick="currentSlide(6)"></span>
+      <span class="dot" onclick="currentSlide(7)"></span>
+    </div>
+  </div>
+  
+  <button class="btn-17" style="margin-top:4vh">
+    <span class="text-container">
+      <a href="https://earth.google.com/web/@27.61558313,85.53383114,1462.14676281a,1025.90516681d,35y,0.00000001h,3.66679884t,360r/data=CgRCAggBOgMKATBCAggASg0I____________ARAA" class="text">Visit us</a>
+    </span>
+  </button>
 </div>
 <div style="display: flex; justify-content: center; width: 100vw; height: auto;margin-bottom:15vh;">
   <div class="book_div zoom-in">
