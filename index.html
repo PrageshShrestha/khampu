@@ -693,6 +693,33 @@ document.addEventListener("DOMContentLoaded", function () {
 
 
             ];
+
+        const specialOccasions = [
+    // --- LATER IN 2026 ---
+    { occasion: "NavaDurga Jatra", engDate: new Date('2026-03-02'), nepDate: "2082-11-18" },
+    { occasion: "Fagu Punhe (Holi)", engDate: new Date('2026-03-03'), nepDate: "2082-11-19" },
+    { occasion: "Biska Jatra", engDate: new Date('2026-04-14'), nepDate: "2083-01-01" },
+    { occasion: "Buddha Jayanti", engDate: new Date('2026-05-01'), nepDate: "2083-01-18" },
+    { occasion: "Sithi Nakha", engDate: new Date('2026-06-20'), nepDate: "2083-03-06" },
+    { occasion: "Busara Puja", engDate: new Date('2026-07-14'), nepDate: "2083-03-30" },
+    { occasion: "Gathemangal", engDate: new Date('2026-08-11'), nepDate: "2083-04-27" },
+    { occasion: "Saparu / Gai Jatra / Janai Purnima", engDate: new Date('2026-08-28'), nepDate: "2083-05-12" },
+    { occasion: "Shree Krishna Janmastami", engDate: new Date('2026-09-04'), nepDate: "2083-05-19" },
+    { occasion: "Buddha Bhagwan Jatra", engDate: new Date('2026-09-15'), nepDate: "2083-05-30" },
+    { occasion: "Indra Jatra", engDate: new Date('2026-09-25'), nepDate: "2083-06-09" },
+    { occasion: "Bhimsen Jatra", engDate: new Date('2026-09-26'), nepDate: "2083-06-10" },
+    { occasion: "Ghatasthapana / Dashain start", engDate: new Date('2026-10-11'), nepDate: "2083-06-25" },
+    { occasion: "Fulpati", engDate: new Date('2026-10-17'), nepDate: "2083-07-01" },
+    { occasion: "Bijaya Dashami", engDate: new Date('2026-10-21'), nepDate: "2083-07-05" },
+    { occasion: "Swanti Nakha (Tihar Start)", engDate: new Date('2026-11-07'), nepDate: "2083-07-22" },
+    { occasion: "Sakimana Punhe", engDate: new Date('2026-11-24'), nepDate: "2083-08-09" },
+    { occasion: "Yomari Punhe", engDate: new Date('2026-12-23'), nepDate: "2083-09-08" },
+    { occasion: "छयालापुन्ही", engDate: new Date('2026-12-24'), nepDate: "2083-09-09" },
+
+    // --- ALREADY GONE IN 2026, SO UPDATED TO 2027 ---
+    { occasion: "Maghe Sankranti", engDate: new Date('2027-01-15'), nepDate: "2083-10-01" },
+    { occasion: "Maha Shivaratri", engDate: new Date('2027-03-06'), nepDate: "2083-11-22" }
+];
             specialOccasions.sort((a, b) => {
                 const [aYear, aMonth, aDay] = a.nepDate.split('-').map(Number);
                 const [bYear, bMonth, bDay] = b.nepDate.split('-').map(Number);
@@ -843,6 +870,7 @@ document.addEventListener("DOMContentLoaded", function () {
         // Add event listener to button click
         document.getElementById('triggerButton').addEventListener('click', openAndFillForm);
     </script>
+
 
 
 
