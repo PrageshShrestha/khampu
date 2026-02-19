@@ -774,6 +774,16 @@ border-radius:10px;
 box-shadow:none;
 background:rgb(48, 48, 47);
 }
+
+.tf_div a.map-hover{
+color:yellow;
+border:1px inset yellow;
+border-radius:10px;
+box-shadow:none;
+background:rgb(48, 48, 47);
+transform: scale(1.05);
+transition: all 0.3s ease-in-out;
+}
 .tracking-in-expand {
 font-size:8rem;
 color:white;

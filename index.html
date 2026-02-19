@@ -284,7 +284,16 @@ tagsData.forEach(tagName => {
                 let feature = map.forEachFeatureAtPixel(evt.pixel, function (feature) {
                     return feature;
                 });
-                if(!feature){
+                
+                // Remove hover class from all text links
+                $(".tf_div a").removeClass('map-hover');
+                
+                if(feature){
+                    const featureName = feature.get('name');
+                    // Add hover class to corresponding text link
+                    $(`.tf_div a[data-name="${featureName}"]`).addClass('map-hover');
+                    document.getElementById('popup').style.display = 'block';
+                } else {
                     document.getElementById('popup').style.display = 'none';
                 }
             });
