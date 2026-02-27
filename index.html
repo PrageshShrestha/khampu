@@ -223,6 +223,7 @@ tagsData.forEach(tagName => {
         <!-- Map container -->
 
         <div class="map_container">
+          <button id="mapToggle" class="map-toggle-btn">🛰️ Satellite</button>
           <a class="mp a" href="https://banepamun.gov.np/">Banepa / भोटे  ↑N</a>
           <a class="mp b" href="https://earth.google.com/web/@27.61771943,85.52283434,1498.59686632a,1630.9930187d,35y,0.00000001h,3.66714672t,0r/data=CgRCAggBOgMKATBCAggASg0I____________ARAA">Dhaneshwor / धनेश्वर</a>
           <a class="mp c" href="https://dhulikhelmun.gov.np/en">Dhulikhel / धौखेल / Chaukot</a>
@@ -235,20 +236,49 @@ tagsData.forEach(tagName => {
     <script>
       $(document).ready(function() {
     // Map Initialization using OpenLayers
+    // Create satellite layer
+    const satelliteLayer = new ol.layer.Tile({
+        source: new ol.source.XYZ({
+            url: 'https://server.arcgisonline.com/ArcGIS/rest/services/World_Imagery/MapServer/tile/{z}/{y}/{x}',
+            attributions: 'Tiles © Esri — Source: Esri, i-cubed, USDA, USGS, AEX, GeoEye, Getmapping, Aerogrid, IGN, IGP, UPR-EGP, and the GIS User Community'
+        }),
+        visible: true
+    });
+
+    // Create street map layer
+    const streetLayer = new ol.layer.Tile({
+        source: new ol.source.OSM(),
+        visible: false
+    });
+
     const map = new ol.Map({
         target: 'map', // Assuming you have a div with id="map"
-        layers: [
-            new ol.layer.Tile({
-                source: new ol.source.XYZ({
-                    url: 'https://server.arcgisonline.com/ArcGIS/rest/services/World_Imagery/MapServer/tile/{z}/{y}/{x}',
-                    attributions: 'Tiles © Esri — Source: Esri, i-cubed, USDA, USGS, AEX, GeoEye, Getmapping, Aerogrid, IGN, IGP, UPR-EGP, and the GIS User Community'
-                })
-            })
-        ],
+        layers: [satelliteLayer, streetLayer],
         view: new ol.View({
             center: ol.proj.fromLonLat([85.53389, 27.61528]), // Panauti coordinates
             zoom: 17
         })
+    });
+
+    // Map toggle functionality
+    const mapToggle = document.getElementById('mapToggle');
+    let isSatellite = true;
+
+    mapToggle.addEventListener('click', function() {
+        if (isSatellite) {
+            satelliteLayer.setVisible(false);
+            streetLayer.setVisible(true);
+            mapToggle.innerHTML = '🗺️ Street';
+            mapToggle.style.background = 'rgba(255, 255, 255, 0.9)';
+            mapToggle.style.color = '#333';
+        } else {
+            satelliteLayer.setVisible(true);
+            streetLayer.setVisible(false);
+            mapToggle.innerHTML = '🛰️ Satellite';
+            mapToggle.style.background = 'rgba(0, 0, 0, 0.7)';
+            mapToggle.style.color = 'white';
+        }
+        isSatellite = !isSatellite;
     });
 
     // Color Palette
