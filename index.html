@@ -240,14 +240,16 @@ tagsData.forEach(tagName => {
     const satelliteLayer = new ol.layer.Tile({
         source: new ol.source.XYZ({
             url: 'https://server.arcgisonline.com/ArcGIS/rest/services/World_Imagery/MapServer/tile/{z}/{y}/{x}',
-            attributions: 'Tiles © Esri — Source: Esri, i-cubed, USDA, USGS, AEX, GeoEye, Getmapping, Aerogrid, IGN, IGP, UPR-EGP, and the GIS User Community'
+            attributions: [] // Remove attribution to save space
         }),
         visible: true
     });
 
     // Create street map layer
     const streetLayer = new ol.layer.Tile({
-        source: new ol.source.OSM(),
+        source: new ol.source.OSM({
+            attributions: [] // Remove OSM attribution
+        }),
         visible: false
     });
 
@@ -255,7 +257,7 @@ tagsData.forEach(tagName => {
     const googleSatLayer = new ol.layer.Tile({
         source: new ol.source.XYZ({
             url: 'https://mt1.google.com/vt/lyrs=s&x={x}&y={y}&z={z}',
-            attributions: '© Google Maps'
+            attributions: [] // Remove attribution to save space
         }),
         visible: false
     });
@@ -266,6 +268,9 @@ tagsData.forEach(tagName => {
         view: new ol.View({
             center: ol.proj.fromLonLat([85.53389, 27.61528]), // Panauti coordinates
             zoom: 17
+        }),
+        controls: ol.control.defaults({
+            attribution: false // Disable attribution control
         })
     });
 
