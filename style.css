@@ -926,29 +926,32 @@ html{
    padding:0;
    margin:0;
    font-size:1.2rem;
+   box-sizing: border-box;
  }
 body{
  width:100vw;
- height:auto;
-
- padding:10px;
+ height:100%;
+ overflow-x: hidden;
+ padding:0;
  margin:0;
-
-
+ background: linear-gradient(135deg, #1e3c72, #2a5298);
 }
 .text_front{
-align-items:center;
-text-align:center;
-width:100vw;
-height:80%;
-
-
+ align-items:center;
+ text-align:center;
+ width:100vw;
+ height:80vh;
+ padding: 20px 10px;
+ position: relative;
+ z-index: 10;
 }
 .page_front{
  display:block;
  width:100vw;
- height:60vh;
+ height:100vh;
  margin-left:0;
+ position: relative;
+ overflow: hidden;
 }
 .if .img_if {
    border-radius: 20px;
@@ -957,62 +960,71 @@ height:80%;
    border: 2px inset white;
 }
 .tracking-in-expand{
- font-size:4rem;
+ font-size:3.5rem;
  font-weight:900;
  width:100vw;
  margin-left:0;
+ line-height: 1.2;
+ text-align: center;
 }
 .tracking-in-expand.b {
- font-size:3rem;
+ font-size:2.5rem;
  z-index:2;
+ margin-bottom: 20px;
 }
 
 .image_front {
-   width: 90vw;
-   height: 40%;
-   padding: 0;
-   margin-top: 20vh;
-   margin-left: 6vw;
+   width: 100vw;
+   height: auto;
+   padding: 20px 10px;
+   margin-top: 10vh;
+   margin-left: 0;
+   display: flex;
+   flex-direction: column;
+   gap: 15px;
+   position: relative;
+   z-index: 5;
 }
 .second_front {
-   width: 95vw;
-   margin-left: 2.5vw;
+   width: 100vw;
+   margin-left: 0;
    text-align: center;
    align-items: center;
    justify-content: center;
-   height: 70vh;
-   position: sticky;
-   top:0;
-   margin-top: 90vh;
+   min-height: 100vh;
+   position: relative;
+   padding: 40px 20px;
+   margin-top: 0;
 }
 .third_front {
-   margin-top: 15vh;
-   width: 95vw;
-   margin-left: 0vw;
-   height: 50vh;
+   margin-top: 0;
+   width: 100vw;
+   margin-left: 0;
+   min-height: 100vh;
    display: block;
-   gap: 50px;
+   padding: 40px 20px;
+   position: relative;
 }
 .overflow_container{
-    width:98vw;
-    height:40vh;
+    width:100vw;
     height:auto;
-    margin-top:20vh;
-    overflow:hidden;
-    background:none;
-    margin-bottom:40vh;
-
+    margin-top: 0;
+    padding: 20px;
+    overflow: visible;
+    background: none;
+    position: relative;
   }
   .last_front{
     display:block;
 }
 .lf_div.b{
-    margin-top:70vh;
+    margin-top: 30px;
     margin-left:0;
   }
 .lf_div{
-  margin-top:40vh;
+  margin-top: 30px;
     width:100%;
+    padding: 20px;
 }
   .tf_div{
     width:100%;
@@ -1022,32 +1034,34 @@ height:80%;
   }
   .festival-container {
     display: block;
-    grid-template-columns: repeat(2, 1fr);
-    margin:0vh auto;
-    margin-left:5vw;
-    
+    margin: 20px auto;
     width: 90vw;
-    height: 80vh;
+    max-height: 60vh;
     overflow-y: auto;
-    overflow-x:hidden;
-    margin-top:130vh;
-    background: none;
-    
-    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+    overflow-x: hidden;
+    padding: 20px;
+    background: rgba(255, 255, 255, 0.1);
+    border-radius: 15px;
+    backdrop-filter: blur(10px);
+    box-shadow: 0 8px 32px rgba(0, 0, 0, 0.3);
 }
 .third_front .tracking-in-expand{
- margin-top:3vh;
+ margin-top: 0;
+ text-align: center;
 }
 .map_container{
-  margin-top:80vh;
+  margin-top: 20px;
+  padding: 20px;
+  width: 100vw;
 }
 #map {
-   height: 50vh;
-   border-radius: 5px;
+   height: 60vh;
+   border-radius: 15px;
    z-index: 5;
-   margin-left:0vw;
-   width: 100vw;
-   margin-top:10vh;
+   margin-left: 0;
+   width: 100%;
+   margin-top: 20px;
+   box-shadow: 0 8px 32px rgba(0, 0, 0, 0.3);
 }
 .mp.d{
   margin-top:54vh;
@@ -1069,18 +1083,21 @@ height:80%;
 .forth_front {
    width: 100vw;
    height: auto;
-   padding: 0;
+   padding: 40px 20px;
    margin: 0;
-   margin-top: -20vh;
+   margin-top: 0;
    align-items: center;
    text-align: center;
+   min-height: 100vh;
 }
 .row_pictures {
-   margin-left: 1vw;
-   width: 98vw;
-   margin-top: 2vh;
-   display: block;
-   gap: 2vw;
+   margin-left: 0;
+   width: 100%;
+   margin-top: 20px;
+   display: flex;
+   flex-direction: column;
+   gap: 20px;
+   align-items: center;
 }
 svg text {
 	animation: stroke 5s infinite alternate;
@@ -1091,14 +1108,24 @@ svg text {
 
 .image_row{
     width:100%;
-    height:26vh;
+    height: auto;
+    min-height: 200px;
     border-radius:15px;
-    margin-bottom:4vw;
-    padding:10px;
+    margin-bottom:20px;
+    padding:15px;
     display:flex;
+    flex-direction: column;
     justify-content:center;
     align-items:center;
-    overflow:hidden;
+    overflow: hidden;
+    background: rgba(255, 255, 255, 0.1);
+    backdrop-filter: blur(10px);
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+  }
+
+.image_row:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 12px 40px rgba(0, 0, 0, 0.4);
   }
 .img_ife {
    width: 16vw;
@@ -1118,14 +1145,15 @@ svg text {
    transform: scaleX(-.9);
 }
 .image_row p {
-   width: 90%;
-   margin-left: 5%;
+   width: 100%;
+   margin-left: 0;
    font-weight: 700;
    font: bold;
-   font-size: 1.5rem;
-   margin-top: -10vh;
-   text-align: left;
+   font-size: 1.2rem;
+   margin-top: 15px;
+   text-align: center;
    color: white;
+   line-height: 1.4;
 }
 
 
@@ -2571,6 +2599,113 @@ html{
 .dot:hover {
     background: white;
     transform: scale(1.2);
+}
+
+/* Mobile Responsive Enhancements */
+@media (max-width: 411px) {
+  
+  /* Improve touch targets for mobile */
+  .btn-17 {
+    min-height: 48px;
+    min-width: 48px;
+    padding: 12px 24px;
+    margin: 10px 0;
+  }
+  
+  /* Better spacing for temple carousel */
+  .temple-carousel-container {
+    padding: 30px 10px;
+    margin: 20px 0;
+  }
+  
+  /* Improve map positioning */
+  .mp {
+    font-size: 0.8rem;
+    padding: 5px 10px;
+  }
+  
+  .mp.a {
+    margin-top: -5vh;
+  }
+  
+  .mp.b {
+    transform: rotate(270deg);
+    margin-left: -5vw;
+    margin-top: 15vh;
+  }
+  
+  .mp.c {
+    margin-left: 30vw;
+    margin-top: 25vh;
+    transform: rotate(90deg);
+  }
+  
+  .mp.d {
+    margin-top: 45vh;
+    margin-left: 5vw;
+  }
+  
+  /* Fix social links for mobile */
+  .social-link {
+    padding: 15px;
+    margin: 10px 5px;
+    font-size: 1.1rem;
+  }
+  
+  /* Improve festival container */
+  .festival-box {
+    margin: 10px 0;
+    padding: 15px;
+    background: rgba(255, 255, 255, 0.05);
+    border-radius: 10px;
+    backdrop-filter: blur(5px);
+  }
+  
+  /* Fix text overflow */
+  .textContainer {
+    font-size: 2rem;
+    padding: 10px;
+  }
+  
+  /* Improve popup for mobile */
+  .popup {
+    flex-direction: column;
+    padding: 20px;
+    width: 95vw;
+    max-width: 95vw;
+  }
+  
+  .popup img {
+    width: 100%;
+    height: auto;
+    max-height: 60vh;
+    object-fit: contain;
+  }
+  
+  /* Better navigation for mobile */
+  .carousel-btn {
+    width: 45px;
+    height: 45px;
+    border-radius: 50%;
+    background: rgba(255, 255, 255, 0.9);
+  }
+  
+  /* Fix footer layout */
+  .last_front {
+    padding: 30px 15px;
+  }
+  
+  .lf_div {
+    text-align: center;
+    margin: 20px 0;
+  }
+  
+  /* Improve area tags */
+  .tf_div a {
+    padding: 8px 12px;
+    font-size: 0.9rem;
+    margin: 5px;
+  }
 }
 
 /* Mobile Responsive */
