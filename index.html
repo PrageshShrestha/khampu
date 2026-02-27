@@ -223,7 +223,7 @@ tagsData.forEach(tagName => {
         <!-- Map container -->
 
         <div class="map_container">
-          <button id="mapToggle" class="map-toggle-btn">🛰️ Satellite</button>
+          <button id="mapToggle" class="map-toggle-btn">�️ Street</button>
           <a class="mp a" href="https://banepamun.gov.np/">Banepa / भोटे  ↑N</a>
           <a class="mp b" href="https://earth.google.com/web/@27.61771943,85.52283434,1498.59686632a,1630.9930187d,35y,0.00000001h,3.66714672t,0r/data=CgRCAggBOgMKATBCAggASg0I____________ARAA">Dhaneshwor / धनेश्वर</a>
           <a class="mp c" href="https://dhulikhelmun.gov.np/en">Dhulikhel / धौखेल / Chaukot</a>
@@ -236,7 +236,7 @@ tagsData.forEach(tagName => {
     <script>
       $(document).ready(function() {
     // Map Initialization using OpenLayers
-    // Create satellite layer
+    // Create satellite layer (Esri)
     const satelliteLayer = new ol.layer.Tile({
         source: new ol.source.XYZ({
             url: 'https://server.arcgisonline.com/ArcGIS/rest/services/World_Imagery/MapServer/tile/{z}/{y}/{x}',
@@ -251,9 +251,18 @@ tagsData.forEach(tagName => {
         visible: false
     });
 
+    // Create Google Satellite layer (alternative high-quality option)
+    const googleSatLayer = new ol.layer.Tile({
+        source: new ol.source.XYZ({
+            url: 'https://mt1.google.com/vt/lyrs=s&x={x}&y={y}&z={z}',
+            attributions: '© Google Maps'
+        }),
+        visible: false
+    });
+
     const map = new ol.Map({
         target: 'map', // Assuming you have a div with id="map"
-        layers: [satelliteLayer, streetLayer],
+        layers: [satelliteLayer, streetLayer, googleSatLayer],
         view: new ol.View({
             center: ol.proj.fromLonLat([85.53389, 27.61528]), // Panauti coordinates
             zoom: 17
@@ -262,23 +271,33 @@ tagsData.forEach(tagName => {
 
     // Map toggle functionality
     const mapToggle = document.getElementById('mapToggle');
-    let isSatellite = true;
+    let currentLayer = 'satellite'; // 'satellite', 'street', 'google'
 
     mapToggle.addEventListener('click', function() {
-        if (isSatellite) {
-            satelliteLayer.setVisible(false);
+        // Hide all layers first
+        satelliteLayer.setVisible(false);
+        streetLayer.setVisible(false);
+        googleSatLayer.setVisible(false);
+        
+        if (currentLayer === 'satellite') {
             streetLayer.setVisible(true);
-            mapToggle.innerHTML = '🗺️ Street';
+            mapToggle.innerHTML = '�️ Google';
             mapToggle.style.background = 'rgba(255, 255, 255, 0.9)';
             mapToggle.style.color = '#333';
-        } else {
-            satelliteLayer.setVisible(true);
-            streetLayer.setVisible(false);
-            mapToggle.innerHTML = '🛰️ Satellite';
+            currentLayer = 'street';
+        } else if (currentLayer === 'street') {
+            googleSatLayer.setVisible(true);
+            mapToggle.innerHTML = '🗺️ Esri';
             mapToggle.style.background = 'rgba(0, 0, 0, 0.7)';
             mapToggle.style.color = 'white';
+            currentLayer = 'google';
+        } else {
+            satelliteLayer.setVisible(true);
+            mapToggle.innerHTML = '�️ Street';
+            mapToggle.style.background = 'rgba(0, 0, 0, 0.7)';
+            mapToggle.style.color = 'white';
+            currentLayer = 'satellite';
         }
-        isSatellite = !isSatellite;
     });
 
     // Color Palette
