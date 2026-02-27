@@ -5,7 +5,7 @@
 ## Since Lichhivi period , reorganized in 1153 BS
 # (1097 AD).
 
-👉 [Visit the Info Site](https://prageshshrestha.github.io/khampu) for more details, maps, and resources!
+[Visit the Info Site](https://prageshshrestha.github.io/khampu) for more details, maps, and resources!
 
 
 Stunning views of Shree Swet Bhairab Temple
