@@ -10,7 +10,11 @@
     <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;700&family=Open+Sans:wght@300;600&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="https://unpkg.com/leaflet@1.9.4/dist/leaflet.css" />
     <link rel="stylesheet" href="style.css">
-    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=5, user-scalable=yes, viewport-fit=cover">
+    <meta name="mobile-web-app-capable" content="yes">
+    <meta name="apple-mobile-web-app-capable" content="yes">
+    <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
+    <meta name="format-detection" content="telephone=no">
     <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.2/gsap.min.js"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.2/ScrollTrigger.min.js"></script>
     <link rel="stylesheet" href="https://unpkg.com/leaflet/dist/leaflet.css" />
@@ -21,7 +25,6 @@
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link href="https://fonts.googleapis.com/css2?family=Dancing+Script&display=swap" rel="stylesheet">
-<meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" href="https://unpkg.com/leaflet@1.7.1/dist/leaflet.css" />
     <script src="https://unpkg.com/leaflet@1.7.1/dist/leaflet.js"></script>
     <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
@@ -957,6 +960,112 @@ const specialOccasions = [
 
         // Initialize carousel on page load
         document.addEventListener('DOMContentLoaded', updateCarousel);
+    </script>
+
+    <!-- Mobile Enhancements -->
+    <script>
+    // Mobile-specific enhancements
+    if (window.innerWidth <= 411) {
+        
+        // Smooth scroll behavior for mobile
+        document.documentElement.style.scrollBehavior = 'smooth';
+        
+        // Prevent zoom on double tap for mobile
+        let lastTouchEnd = 0;
+        document.addEventListener('touchend', function (event) {
+            const now = (new Date()).getTime();
+            if (now - lastTouchEnd <= 300) {
+                event.preventDefault();
+            }
+            lastTouchEnd = now;
+        }, false);
+        
+        // Add touch feedback for interactive elements
+        document.querySelectorAll('.btn-17, .temple-slide, .image_row, .tf_div a').forEach(element => {
+            element.addEventListener('touchstart', function() {
+                this.style.transform = 'scale(0.95)';
+                this.style.transition = 'transform 0.1s ease';
+            });
+            
+            element.addEventListener('touchend', function() {
+                this.style.transform = 'scale(1)';
+            });
+        });
+        
+        // Optimize images for mobile
+        document.querySelectorAll('img').forEach(img => {
+            img.loading = 'lazy';
+            img.addEventListener('load', function() {
+                this.style.opacity = '0';
+                setTimeout(() => {
+                    this.style.transition = 'opacity 0.3s ease';
+                    this.style.opacity = '1';
+                }, 100);
+            });
+        });
+        
+        // Better popup handling for mobile
+        const popup = document.getElementById('popup');
+        const popupImg = document.getElementById('popupImg');
+        
+        // Close popup on escape key and outside touch
+        document.addEventListener('keydown', function(e) {
+            if (e.key === 'Escape' && popup.style.display === 'flex') {
+                popup.style.display = 'none';
+            }
+        });
+        
+        // Add swipe to close for popup
+        let touchStartY = 0;
+        popup.addEventListener('touchstart', function(e) {
+            touchStartY = e.touches[0].clientY;
+        });
+        
+        popup.addEventListener('touchend', function(e) {
+            const touchEndY = e.changedTouches[0].clientY;
+            if (touchStartY - touchEndY > 100) {
+                this.style.display = 'none';
+            }
+        });
+        
+        // Improve map interactions for mobile
+        const mapElement = document.getElementById('map');
+        if (mapElement) {
+            mapElement.addEventListener('touchstart', function() {
+                this.style.cursor = 'grab';
+            });
+            
+            mapElement.addEventListener('touchend', function() {
+                this.style.cursor = 'grab';
+            });
+        }
+        
+        // Add pull-to-refresh functionality
+        let startY = 0;
+        let isPulling = false;
+        
+        document.addEventListener('touchstart', function(e) {
+            if (window.scrollY === 0) {
+                startY = e.touches[0].clientY;
+                isPulling = true;
+            }
+        });
+        
+        document.addEventListener('touchmove', function(e) {
+            if (isPulling && e.touches[0].clientY - startY > 100) {
+                // Show refresh indicator or perform refresh
+                document.body.style.transform = 'translateY(50px)';
+                document.body.style.transition = 'transform 0.3s ease';
+            }
+        });
+        
+        document.addEventListener('touchend', function() {
+            if (isPulling) {
+                document.body.style.transform = 'translateY(0)';
+                isPulling = false;
+            }
+        });
+    }
     </script>
 
 
