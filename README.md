@@ -1,8 +1,8 @@
 # 🌄 Project Khampu
 
-#Discover the Beauty of Khadpu town of Dhulikhel
-#A town of the past , the present and the future.
-#Since Lichhivi period , reorganized in 1153 BS
+Discover the Beauty of Khadpu town of Dhulikhel
+A town of the past , the present and the future.
+Since Lichhivi period , reorganized in 1153 BS
 # (1097 AD).
 
 [Visit the Info Site](https://prageshshrestha.github.io/khampu) for more details, maps, and resources!
