@@ -1,4 +1,4 @@
-# 🌄 Project Khampu
+# Project Khampu
 
 Discover the Beauty of Khadpu town of Dhulikhel
 A town of the past , the present and the future.
